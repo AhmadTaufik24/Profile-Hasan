@@ -1,0 +1,1020 @@
+/* =======================================================
+   RESET & VARIABEL GLOBAL
+   ======================================================= */
+/* =======================================================
+   RESET & VARIABEL GLOBAL
+   ======================================================= */
+:root {
+    --bg-main: #0a0b10;
+    --bg-card: #15161b;
+    --primary-cyan: #00f0ff;
+    --text-white: #ffffff;
+    --text-gray: #9ca3af;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* INI KUNCI UTAMANYA BIAR NGGAK BISA DIGESER KE SAMPING */
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-white);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-white);
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+.highlight {
+    color: var(--primary-cyan);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+/* =======================================================
+   TOMBOL (BUTTONS)
+   ======================================================= */
+.btn-primary, .btn-contact {
+    background-color: var(--primary-cyan);
+    color: var(--bg-main);
+    padding: 10px 24px;
+    border-radius: 5px;
+    font-weight: 600;
+    border: 2px solid var(--primary-cyan);
+    display: inline-block;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-primary:hover, .btn-contact:hover {
+    background-color: transparent;
+    color: var(--primary-cyan);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.play-icon {
+    background-color: var(--text-white);
+    color: var(--bg-main);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+.btn-secondary:hover .play-icon {
+    background-color: var(--primary-cyan);
+}
+
+/* =======================================================
+   NAVIGASI (NAVBAR)
+   ======================================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: rgba(10, 11, 16, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.logo-icon {
+    color: var(--primary-cyan);
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-gray);
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--primary-cyan);
+}
+
+/* =======================================================
+   HERO SECTION
+   ======================================================= */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 150px 5% 100px;
+    min-height: 100vh;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    color: var(--text-gray);
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* =======================================================
+   SERVICES SECTION
+   ======================================================= */
+.services-section {
+    padding: 80px 5%;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.services-text {
+    flex: 1;
+}
+
+.services-text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.services-text p {
+    color: var(--text-gray);
+    margin-bottom: 20px;
+}
+
+.services-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    background-color: var(--bg-card);
+    padding: 30px;
+    border-radius: 10px;
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.service-card:hover {
+    border-color: var(--primary-cyan);
+    transform: translateY(-5px);
+}
+
+.service-card img {
+    width: 40px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 14px;
+    color: var(--text-gray);
+}
+
+/* =======================================================
+   STATS SECTION
+   ======================================================= */
+.stats-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 5%;
+    background-color: var(--bg-card);
+    margin: 0 5%;
+    border-radius: 10px;
+}
+
+.stat-item h2 {
+    font-size: 40px;
+    color: var(--primary-cyan);
+    margin-bottom: 5px;
+}
+
+.stat-item p {
+    color: var(--text-gray);
+    font-weight: 500;
+}
+
+/* =======================================================
+   ABOUT SECTION
+   ======================================================= */
+.about-section {
+    padding: 100px 5%;
+}
+
+.section-header {
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    color: var(--text-gray);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.about-content {
+    display: flex;
+    gap: 50px;
+}
+
+.education, .skills {
+    flex: 1;
+}
+
+.education h3, .skills h3 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--primary-cyan);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.timeline-item {
+    background-color: var(--bg-card);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 3px solid var(--primary-cyan);
+}
+
+.timeline-item .date {
+    color: var(--primary-cyan);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.timeline-item h4 {
+    margin: 10px 0;
+}
+
+.timeline-item p {
+    color: var(--text-gray);
+    font-size: 14px;
+}
+
+.skill-item {
+    margin-bottom: 20px;
+}
+
+.skill-name, .skill-percent {
+    font-size: 15px;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.skill-percent {
+    float: right;
+    color: var(--primary-cyan);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #2a2c35;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--primary-cyan);
+    border-radius: 4px;
+}
+
+/* =======================================================
+   PORTFOLIO SECTION
+   ======================================================= */
+.portfolio-section {
+    padding: 100px 5%;
+    background-color: var(--bg-card);
+}
+
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid var(--text-gray);
+    color: var(--text-white);
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: var(--primary-cyan);
+    color: var(--bg-main);
+    border-color: var(--primary-cyan);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.portfolio-card {
+    background-color: var(--bg-main);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.portfolio-card:hover {
+    transform: translateY(-10px);
+}
+
+.portfolio-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.portfolio-info {
+    padding: 20px;
+}
+
+.portfolio-info h3 {
+    margin-bottom: 10px;
+}
+
+.portfolio-info p {
+    color: var(--text-gray);
+    font-size: 14px;
+}
+
+/* =======================================================
+   BLOG & TESTIMONIALS
+   ======================================================= */
+.blog-section, .testimonial-section {
+    padding: 100px 5%;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.blog-card {
+    background-color: var(--bg-card);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.blog-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.blog-card h3 {
+    margin-bottom: 10px;
+}
+
+.blog-card p {
+    color: var(--text-gray);
+}
+
+.testimonial-box {
+    background-color: var(--bg-card);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 800px;
+    margin: 40px auto 0;
+}
+
+.testimonial-box p {
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: var(--text-gray);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: var(--primary-cyan);
+}
+
+/* =======================================================
+   BRANDS & FOOTER
+   ======================================================= */
+.brands-section {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 50px 5%;
+    opacity: 0.5;
+    flex-wrap: wrap;
+}
+
+footer {
+    background-color: var(--bg-card);
+    padding: 60px 5% 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-info p, .footer-newsletter p {
+    color: var(--text-gray);
+    margin-top: 15px;
+}
+
+.footer-links h3, .footer-newsletter h3 {
+    margin-bottom: 20px;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: var(--text-gray);
+}
+
+.footer-links ul li a:hover {
+    color: var(--primary-cyan);
+}
+
+.footer-newsletter form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.footer-newsletter input {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--bg-main);
+    color: var(--text-white);
+}
+
+.footer-newsletter input:focus {
+    outline: 1px solid var(--primary-cyan);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #2a2c35;
+    color: var(--text-gray);
+    font-size: 14px;
+}
+
+/* =======================================================
+   RESPONSIVE DESIGN (HP & TABLET)
+   ======================================================= */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-white);
+    transition: var(--transition);
+    border-radius: 3px;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+    .hero-section {
+        padding: 120px 5% 50px;
+    }
+    .hero-content h1 {
+        font-size: 36px;
+    }
+    .services-section, .about-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+/* Handphone (Mobile) */
+@media (max-width: 768px) {
+    /* Atur Navbar & Menu Mobile */
+    .btn-contact {
+        display: none;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 100%;
+        background-color: rgba(10, 11, 16, 0.98);
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+        transition: 0.4s ease;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.3);
+    }
+    .nav-links.slide {
+        right: 0;
+    }
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    /* Atur Hero Section */
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 140px;
+    }
+    .hero-buttons {
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+    .hero-image {
+        justify-content: center;
+    }
+    .hero-image img {
+        width: 250px !important;
+        height: 250px !important;
+    }
+
+    /* Jadikan 1 Kolom ke bawah */
+    .services-grid, .portfolio-grid, .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Atur Jarak Statistik & Brand */
+    .stats-section {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+        padding: 40px 5%;
+    }
+    .brands-section {
+        gap: 30px;
+    }
+}
+
+/* =======================================================
+   CSS TAMBAHAN UNTUK PORTFOLIO (ZOOM & PAGINATION)
+   ======================================================= */
+
+/* 1. Page Header (Judul Halaman Dalam) */
+.page-header {
+    padding-top: 150px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.page-header p {
+    color: var(--text-gray);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 2. Efek Kursor Saat Disentuh pada Foto di Grid */
+.portfolio-card img {
+    cursor: zoom-in; /* Berubah jadi ikon kaca pembesar zoom */
+    transition: var(--transition);
+}
+.portfolio-card img:hover {
+    transform: scale(1.05); /* Sedikit membesar */
+}
+
+/* 3. Modal Lightbox (Layar Hitam Pop-up) */
+.lightbox {
+    display: none; /* Sembunyi dulu */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 11, 16, 0.95); /* Gelap transparan */
+    backdrop-filter: blur(5px);
+}
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+    margin-top: 5vh;
+    animation: zoomIn 0.3s ease; /* Animasi muncul */
+}
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: var(--text-gray);
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.close-lightbox:hover {
+    color: var(--primary-cyan);
+}
+@keyframes zoomIn {
+    from {transform: scale(0.8); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+/* 4. Tombol Pagination (Back & Next) */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+.btn-page {
+    background-color: transparent;
+    color: var(--text-white);
+    border: 1px solid var(--primary-cyan);
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+}
+.btn-page:hover:not(:disabled) {
+    background-color: var(--primary-cyan);
+    color: var(--bg-main);
+}
+.btn-page:disabled {
+    border-color: #2a2c35;
+    color: var(--text-gray);
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+#page-info {
+    color: var(--primary-cyan);
+    font-weight: 600;
+}
+/* =======================================================
+   PRICING (KARTU HARGA) SECTION
+   ======================================================= */
+.pricing-section {
+    padding: 0 5% 50px;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: center;
+}
+
+.pricing-card {
+    background-color: var(--bg-card);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid transparent;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+.pricing-card:hover {
+    border-color: var(--primary-cyan);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 240, 255, 0.1);
+}
+
+.highlight-card {
+    border-color: var(--primary-cyan);
+    background-color: rgba(0, 240, 255, 0.05);
+    transform: scale(1.05); /* Dibuat sedikit lebih besar */
+}
+
+.highlight-card:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.badge {
+    position: absolute;
+    top: -15px;
+    right: 30px;
+    background-color: var(--primary-cyan);
+    color: var(--bg-main);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pricing-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.pricing-desc {
+    color: var(--text-gray);
+    font-size: 14px;
+    margin-bottom: 25px;
+    min-height: 45px;
+}
+
+.price {
+    font-size: 40px;
+    color: var(--primary-cyan);
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.price span {
+    font-size: 16px;
+    color: var(--text-gray);
+    font-weight: 400;
+}
+
+.pricing-features {
+    flex-grow: 1; /* Biar tombol di bawah rata posisinya */
+    margin-bottom: 30px;
+}
+
+.pricing-features li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: var(--text-gray);
+    font-size: 15px;
+}
+
+/* Membuat checklist custom menggunakan CSS */
+.pricing-features li::before {
+    content: '✓';
+    color: var(--primary-cyan);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Responsif khusus pricing card di HP */
+@media (max-width: 991px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+    .highlight-card {
+        transform: scale(1);
+    }
+    .highlight-card:hover {
+        transform: translateY(-10px);
+    }
+}
+
+/* =======================================================
+   CONTACT PAGE SECTION
+   ======================================================= */
+.contact-page-section {
+    padding: 0 5% 100px;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: var(--bg-card);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Kiri: Info Kontak */
+.contact-info-box h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.info-icon {
+    font-size: 24px;
+    background-color: rgba(0, 240, 255, 0.1);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.info-item h4 {
+    color: var(--text-white);
+    margin-bottom: 5px;
+}
+
+.info-item p {
+    color: var(--text-gray);
+    font-size: 14px;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.social-btn {
+    border: 1px solid var(--text-gray);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    transition: var(--transition);
+}
+
+.social-btn:hover {
+    border-color: var(--primary-cyan);
+    color: var(--primary-cyan);
+}
+
+/* Kanan: Form Kontak */
+.contact-form-box {
+    background-color: var(--bg-main);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-gray);
+    font-size: 14px;
+}
+
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--bg-card);
+    border: 1px solid #2a2c35;
+    border-radius: 8px;
+    color: var(--text-white);
+    font-family: inherit;
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.input-group input:focus, 
+.input-group select:focus, 
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-cyan);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.1);
+}
+
+/* Responsif khusus halaman kontak di HP */
+@media (max-width: 991px) {
+    .contact-container {
+        grid-template-columns: 1fr; /* Jadi satu kolom memanjang ke bawah */
+        padding: 30px 20px;
+    }
+}
